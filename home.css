@@ -1,0 +1,635 @@
+/*==========Color Variables===========*/
+/*=================Extend Classes=================*/
+.boxSize, * {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+}
+
+.backColor, body {
+  background: rgba(0, 134, 179, 0.7);
+  -webkit-background: rgba(0, 134, 179, 0.7);
+  -moz-background: rgba(0, 134, 179, 0.7);
+  -ms-background: rgba(0, 134, 179, 0.7);
+  -o-background: rgba(0, 134, 179, 0.7);
+}
+
+.border, #contact form, header .navbar ul .items:hover {
+  border: 2px solid #00ace6;
+  -webkit-border: 2px solid #00ace6;
+  -moz-border: 2px solid #00ace6;
+  -ms-border: 2px solid #00ace6;
+  -o-border: 2px solid #00ace6;
+}
+
+.radiusTen {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.tranScale, header .navbar ul .items:hover {
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+
+.tranSecond, .landpage .content a:hover::before, .landpage .content a:hover::after, .landpage .content a::before, .landpage .content a::after {
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -o-transition: 0.8s;
+  -ms-transition: 0.8s;
+}
+
+.grid, #contact form {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+/*=============Basicly==========*/
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  color: #00ace6;
+  font-size: 16px;
+  border: 2px solid #00ace6;
+}
+
+/*==============Sass Style==========*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  background: #1ac6ff;
+  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+header #logo {
+  width: 200px;
+  height: 50px;
+}
+header #logo img {
+  width: 100%;
+  height: 100%;
+}
+header .navbar {
+  display: flex;
+  padding: 0 8px;
+  margin-right: 10px;
+}
+header .navbar ul {
+  display: flex;
+}
+header .navbar ul .items {
+  margin-left: 50px;
+  padding: 4px;
+  font-size: 20px;
+}
+header .navbar ul .items:hover {
+  cursor: pointer;
+  border: none;
+}
+header .navbar ul .items a {
+  color: #007399;
+  font-size: 36px;
+  font-weight: bold;
+}
+header .navbar ul .items a:hover {
+  color: #0099cc;
+}
+
+.landpage {
+  position: relative;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #39434a, #4c98ce);
+  /*    .blur{position:absolute;top:0;left:0;width:100%;height:100%;opacity:.3;background:rgba($color:$darkColor01, $alpha: .7);}
+     */
+}
+.landpage .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  width: 50%;
+}
+.landpage .content h1 {
+  border: none;
+  font-size: 40px;
+  position: absolute;
+  bottom: 30%;
+  right: 19%;
+}
+.landpage .content a {
+  background: #494b56;
+  padding: 5px;
+  position: relative;
+}
+.landpage .content a span {
+  color: #1ac6ff;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 2;
+}
+.landpage .content a::after {
+  content: "";
+  position: absolute;
+  background: #1ac6ff;
+  width: 4px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+.landpage .content a::before {
+  content: "";
+  position: absolute;
+  background: #1ac6ff;
+  width: 4px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+.landpage .content a:hover span {
+  color: #fff;
+}
+.landpage .content a:hover::after {
+  width: 50%;
+  background: linear-gradient(45deg, #05334c5c, #a4b4cc12);
+}
+.landpage .content a:hover::before {
+  width: 50%;
+  background: linear-gradient(45deg, #4cabef9c, #2e404800);
+}
+
+#about {
+  width: 100%;
+  padding: 20px 0;
+}
+#about .containAbout {
+  display: flex;
+  max-width: 80%;
+  text-align: center;
+  margin: 20px auto;
+}
+#about .containAbout .contentAbout {
+  background: linear-gradient(45deg, #39434a, #4c98ce);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+#about .containAbout .contentAbout h2 {
+  color: #1ac6ff;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+#about .containAbout .contentAbout p {
+  color: #80dfff;
+  text-align: center;
+  font-size: 21px;
+  font-weight: boldd;
+}
+
+#services {
+  background: linear-gradient(45deg, #416984c2, #509fd7a8);
+  padding: 20px;
+}
+#services .containService {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+#services .containService .containBox {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  width: 400px;
+  padding: 15px;
+  text-align: center;
+  align-items: center;
+  background: linear-gradient(45deg, #39434a, #4c98ce);
+  margin-left: 40px;
+}
+#services .containService .containBox svg {
+  width: 300px;
+  height: 200px;
+}
+#services .containService .containBox .contentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+#services .containService .containBox .contentBox h2 {
+  color: #1ac6ff;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#services .containService .containBox .contentBox p {
+  color: #ace3fd;
+  text-align: center;
+  font-size: 31px;
+  font-weight: boldd;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+#contact form {
+  min-height: 200px;
+  width: 800px;
+  background: linear-gradient(45deg, #39bdd2, #1a5765);
+}
+#contact form * {
+  border-radius: 8px;
+}
+#contact form .options {
+  color: green;
+  font-size: 21px;
+  color: #0099cc;
+  outline: none;
+  border: none;
+}
+#contact form h2 {
+  color: #4dd2ff;
+  text-shadow: 4px 4px #006080;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  grid-column: 2/span 2;
+}
+#contact form input {
+  color: #0099cc;
+  padding: 5px;
+  font-size: 26px;
+  outline: none;
+  border: none;
+  border-bottom: 3px solid #4dd2ff;
+}
+#contact form input::placeholder {
+  color: #0099cc;
+}
+#contact form .first {
+  grid-column: 1/span 2;
+}
+#contact form .last {
+  grid-column: 3/span 2;
+}
+#contact form .email {
+  grid-column: 1/span 3;
+}
+#contact form .msg {
+  color: #0099cc;
+  grid-column: 1/span 4;
+  height: 100px;
+  outline: none;
+  font-size: 26px;
+}
+#contact form .msg::placeholder {
+  text-align: center;
+  align-items: bottom;
+  line-height: 80px;
+  color: #0099cc;
+}
+#contact form .submit {
+  grid-column: 2/span 2;
+  background: linear-gradient(45deg, #05334c5c, #a4b4cc12);
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+}
+#contact form .submit:hover {
+  color: #80dfff;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(45deg, #05334c5c, #a4b4cc12);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+}
+footer p {
+  margin-left: 20px;
+  color: #1ceaea;
+}
+footer span {
+  font-size: 20px;
+  color: #1cb5ea;
+}
+
+/*===================== Variables Media Query ================*/
+/*===================== Media Query ================*/
+@media (max-width: 1254px) {
+  .landpage .content h1 {
+    font-size: 30px;
+    right: 23%;
+    bottom: 35%;
+  }
+
+  #services .containService {
+    display: flex;
+    max-width: 60%;
+    margin: 0 60px;
+    justify-content: space-between;
+  }
+  #services .containService .containBox {
+    min-height: 300px;
+    width: 330px;
+    padding: 15px;
+    margin-left: 20px;
+  }
+  #services .containService .containBox svg {
+    width: 300px;
+    height: 200px;
+  }
+  #services .containService .containBox .contentBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  #services .containService .containBox .contentBox h2 {
+    color: #1ac6ff;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  #services .containService .containBox .contentBox p {
+    font-size: 31px;
+    font-weight: bold;
+  }
+}
+@media (max-width: 1166px) {
+  body {
+    width: 1166px;
+  }
+
+  .landpage {
+    height: 420px;
+  }
+  .landpage .content img {
+    width: 280px;
+  }
+  .landpage .content a span {
+    font-size: 34px;
+  }
+  .landpage .content h1 {
+    font-size: 30px;
+    right: 23%;
+    bottom: 35%;
+  }
+
+  #services .containService {
+    display: flex;
+    max-width: 60%;
+    margin: 0 25px;
+    justify-content: space-between;
+  }
+  #services .containService .containBox {
+    min-height: 300px;
+    width: 330px;
+    padding: 15px;
+    margin-left: 20px;
+  }
+  #services .containService .containBox svg {
+    width: 300px;
+    height: 200px;
+  }
+  #services .containService .containBox .contentBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  #services .containService .containBox .contentBox h2 {
+    color: #1ac6ff;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  #services .containService .containBox .contentBox p {
+    font-size: 31px;
+    font-weight: boldd;
+  }
+}
+@media (max-width: 793px) {
+  body {
+    width: 1166px;
+  }
+
+  header {
+    width: 820px;
+    height: auto;
+    display: flex;
+    background: #1ac6ff;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  header #logo {
+    width: 100px;
+    height: 50px;
+  }
+  header #logo img {
+    width: 100%;
+    height: 100%;
+  }
+  header .navbar {
+    display: flex;
+    padding: 0 4px;
+    margin-right: 4px;
+  }
+  header .navbar ul {
+    display: flex;
+  }
+  header .navbar ul .items {
+    margin-left: 50px;
+    padding: 4px;
+    font-size: 16px;
+  }
+  header .navbar ul .items:hover {
+    cursor: pointer;
+    border: none;
+  }
+  header .navbar ul .items a {
+    color: #007399;
+    font-size: 21px;
+    font-weight: bold;
+  }
+  header .navbar ul .items a:hover {
+    color: #0099cc;
+  }
+
+  .landpage {
+    height: 420px;
+    align-items: left;
+    text-align: left;
+  }
+  .landpage .content {
+    width: 350px;
+    margin: 0 0 0 -400px;
+  }
+  .landpage .content img {
+    width: 200px;
+    height: 300px;
+  }
+  .landpage .content a span {
+    font-size: 16px;
+  }
+  .landpage .content h1 {
+    font-size: 24px;
+    right: 44%;
+    bottom: 35%;
+  }
+
+  #services .containService {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+  #services .containService .containBox {
+    min-height: 300px;
+    width: 330px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  #services .containService .containBox svg {
+    width: 300px;
+    height: 200px;
+  }
+  #services .containService .containBox .contentBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  #services .containService .containBox .contentBox h2 {
+    color: #1ac6ff;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  #services .containService .containBox .contentBox h2 p {
+    font-size: 31px;
+    font-weight: bo;
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: -200px;
+  }
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    width: 400px;
+    background: linear-gradient(45deg, #39bdd2, #1a5765);
+    margin-left: 75px;
+  }
+  #contact form * {
+    border-radius: 8px;
+  }
+  #contact form .options {
+    color: green;
+    font-size: 21px;
+    color: #0099cc;
+    outline: none;
+    border: none;
+  }
+  #contact form h2 {
+    color: #4dd2ff;
+    text-shadow: 4px 4px #006080;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  #contact form input {
+    color: #0099cc;
+    padding: 5px;
+    font-size: 26px;
+    outline: none;
+    border: none;
+    border-bottom: 3px solid #4dd2ff;
+  }
+  #contact form input::placeholder {
+    color: #0099cc;
+  }
+  #contact form .msg {
+    color: #0099cc;
+    height: 100px;
+    outline: none;
+    font-size: 26px;
+  }
+  #contact form .msg::placeholder {
+    text-align: center;
+    align-items: bottom;
+    line-height: 80px;
+    color: #0099cc;
+  }
+  #contact form .submit {
+    background: linear-gradient(45deg, #05334c5c, #a4b4cc12);
+    color: #fff;
+    font-size: 26px;
+    cursor: pointer;
+  }
+  #contact form .submit:hover {
+    color: #80dfff;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

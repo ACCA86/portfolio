@@ -1,0 +1,381 @@
+/*==========Color Variables===========*/
+$mainColor: hsl(195, 100%, 45%);
+$landPageColor:linear-gradient(45deg, #39434a, #4c98ce);
+$hoverLeftColor:linear-gradient(45deg, #05334c5c, #a4b4cc12);
+$hoverRightColor:linear-gradient(45deg, #4cabef9c, #2e404800);
+$formColor:linear-gradient(45deg, #39bdd2, #1a5765);
+$sumbitColor:linear-gradient(45deg, #05334c5c, #a4b4cc12);
+$lightColor01:hsl(195, 100%, 75%);
+$lightColor02:hsl(195, 100%, 65%);
+$lightColor03:hsl(195, 100%, 55%);
+$lightColor04:hsl(195, 100%, 40%);
+$lightColor05:hsl(195, 100%, 35%);
+$darkColor01:hsl(195, 100%, 30%);
+$darkColor02:hsl(195, 100%, 25%);
+$darkColor03:hsl(195, 100%, 20%);
+$darkColor04:hsl(195, 100%, 15%);
+
+$fontSize:16px;
+$fontWeight:bold;
+$border:2px solid $mainColor;
+
+/*=================Extend Classes=================*/
+.boxSize{
+    box-sizing: border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;   
+}
+.backColor{
+    background:rgba($color:$lightColor05, $alpha: .7);
+    -webkit-background:rgba($color: $lightColor05, $alpha: .7);
+    -moz-background:rgba($color: $lightColor05, $alpha: .7);
+    -ms-background:rgba($color: $lightColor05, $alpha: .7);
+    -o-background:rgba($color: $lightColor05, $alpha: .7);
+}
+.border{
+    border:2px solid $mainColor;
+    -webkit-border:2px solid $mainColor;
+    -moz-border:2px solid $mainColor;
+    -ms-border:2px solid $mainColor;
+    -o-border:2px solid $mainColor;
+}
+.radiusTen{
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+.tranScale{
+    transform:scale(1.2);
+    -webkit-transform:scale(1.2);
+    -moz-transform:scale(1.2);
+    -o-transform:scale(1.2);
+    -ms-transform:scale(1.2); 
+}
+.tranSecond{
+    transition:0.8s;
+    -webkit-transition:0.8s;
+    -moz-transition:0.8s;
+    -o-transition:0.8s;
+    -ms-transition:0.8s;
+}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+/*=============Basicly==========*/
+a{text-decoration:none;}
+ul{list-style-type:none;}
+h1{color:$mainColor;font-size:$fontSize;border:$border;}
+
+/*==============Sass Style==========*/
+
+*{margin:0;padding:0;@extend .boxSize; }
+body{@extend .backColor;overflow-x:hidden;}
+
+header{
+    width:100%;height:auto;display:flex;background:$lightColor03;padding:10px;flex-direction:row;
+    align-items:center;justify-content:space-between;
+    #logo
+    {
+        width:200px;height:50px;
+        img{
+            width:100%;height:100%;
+        }
+    }
+    .navbar{
+        display:flex;padding:0 8px;margin-right:10px;
+        ul
+        {
+            display:flex;
+            .items{
+                margin-left:50px;;padding:4px;font-size:$fontSize + 4;
+                &:hover{@extend .border;cursor:pointer;border:none;@extend .tranScale;}
+                a{
+                    color:$darkColor01;font-size:$fontSize + 20;font-weight:$fontWeight;
+                    &:hover{color:$lightColor04;}
+                }
+            }
+        }
+    }
+
+}
+
+.landpage{
+    position:relative;width:100%;height:550px;display:flex;text-align:center;align-items:center;justify-content:center;background:$landPageColor;
+/*    .blur{position:absolute;top:0;left:0;width:100%;height:100%;opacity:.3;background:rgba($color:$darkColor01, $alpha: .7);}
+   */.content{display:flex;justify-content:space-between;align-items:center;padding:10px;width:50%;
+        h1{border:none;font-size:40px;position:absolute;bottom:30%;right:19%;}
+        a
+        {
+            background:#494b56;padding:5px;position:relative;
+            span{color:$lightColor03;font-size:$fontSize + 20;font-weight:bold;letter-spacing:2px;z-index:2;}
+            &::after{content:'';position:absolute;background:$lightColor03;width:4px;height:100%;left:0;top:0;z-index:1;@extend .tranSecond;}
+            &::before{content:'';position:absolute;background:$lightColor03;width:4px;height:100%;right:0;top:0;z-index:1;@extend .tranSecond;}
+            &:hover{
+                span{ color:#fff;}
+                &::after{width:50%;background:$hoverLeftColor;@extend .tranSecond;}
+                &::before{width:50%;background:$hoverRightColor;@extend .tranSecond;}
+            }
+        }
+    }
+}
+
+#about
+{
+    width:100%;padding:20px 0;
+    .containAbout{        
+        display:flex;max-width:80%;text-align:center;margin:20px auto;
+        .contentAbout{
+            background:$landPageColor;display:flex;flex-direction:column;justify-content:center;padding:20px;
+            h2{color:$lightColor03;text-align:center;font-size:$fontSize + 20;margin-bottom:20px;letter-spacing:2px;}
+            p{color:$lightColor01;text-align:center;font-size:$fontSize + 5;font-weight:boldd;}
+        }
+    }
+}
+
+#services
+{
+    background:linear-gradient(45deg, #416984c2, #509fd7a8);padding:20px;
+    .containService{  
+        display:flex;width:80%;margin:0 auto;;justify-content:space-between;
+        .containBox{
+           display:flex;flex-direction:column;min-height:350px;width:400px;padding:15px;
+            text-align:center;align-items:center;background:$landPageColor;margin-left:40px;
+            
+            svg{width:300px;height:200px;}
+            .contentBox{
+                display:flex;flex-direction:column;justify-content:space-between;margin-top:20px;
+                h2{color:$lightColor03;font-size:$fontSize + 20;font-weight:bold;margin-bottom:20px;}
+                p{color:#ace3fd;text-align:center;font-size:$fontSize + 15;font-weight:boldd;}
+            }
+        }            
+       
+    }
+}
+
+#contact{
+    display:flex;flex-direction:column;width:100%;height:500px;text-align:center;align-items:center;justify-content:center;
+    form{
+        @extend .border;@extend .grid;min-height:200px;width:800px;background:$formColor;
+        *{border-radius:8px;}
+        .options{color: green;font-size:$fontSize + 5;color:$lightColor04;outline:none;border:none;
+        }
+        h2
+        {
+            color:$lightColor02;text-shadow: 4px 4px $darkColor02;font-size:$fontSize + 20;font-weight:bold;margin-bottom:40px;grid-column:2/span 2;}
+        input
+        {
+            color:$lightColor04;padding:5px;font-size:$fontSize + 10;outline:none;border:none;border-bottom:3px solid $lightColor02;
+            &::placeholder{color:$lightColor04;}
+        }
+        .first{grid-column:1/span 2;}
+        .last{grid-column:3/span 2;}
+        .email{grid-column:1/span 3;}
+       .msg
+       {
+           color:$lightColor04;grid-column:1/span 4;height:100px;outline:none;font-size:$fontSize + 10;
+           &::placeholder{text-align:center;align-items:bottom;line-height:80px;color:$lightColor04;
+        }
+    }
+    .submit{grid-column:2/span 2;background:$sumbitColor;color:#fff;font-size:$fontSize + 10;cursor:pointer;
+        &:hover{color:$lightColor01;}
+      }
+    }
+}
+
+footer{
+   display:flex;flex-direction:row; background:$hoverLeftColor;text-align:center;align-items:center;justify-content:center;
+   padding:15px 0;
+   p{margin-left:20px;color:#1ceaea;}
+   span{
+       font-size:20px;color:#1cb5ea;
+       
+   }
+}
+
+
+
+
+/*===================== Variables Media Query ================*/
+$breakpoint-tablet: 768px;
+$breakpoint-tablet01:1255px;
+$breakpoint-tablet02:1254px;
+$breakpoint-tablet03:1166px;
+$breakpoint-tablet04:793px;
+
+
+/*===================== Media Query ================*/
+
+@media (max-width: $breakpoint-tablet02) {
+    .landpage{
+        .content{
+            h1{font-size:30px;right:23%;bottom:35%;}
+          }
+    }
+
+
+
+    #services{
+        .containService{  
+            display:flex;max-width:60%;margin:0 60px;;justify-content:space-between;
+            .containBox{
+               min-height:300px;width:330px;padding:15px;
+                margin-left:20px;
+                svg{width:300px;height:200px;}
+                .contentBox{
+                    display:flex;flex-direction:column;justify-content:space-between;margin-top:20px;
+                    h2{color:$lightColor03;font-size:$fontSize + 20;font-weight:bold;margin-bottom:20px;}
+                    p{font-size:$fontSize + 15;font-weight:$fontWeight;}
+                }
+            }            
+           
+        }
+    }
+
+}
+
+
+@media (max-width: $breakpoint-tablet03) {
+    body{width:1166px;}
+    .landpage{
+        height:420px;
+        .content{
+            img{width:280px;}
+            a{
+                span{font-size:$fontSize + 18;}
+            }
+            h1{font-size:30px;right:23%;bottom:35%;}
+          }
+    }
+
+
+
+    #services{
+        .containService{  
+            display:flex;max-width:60%;margin:0 25px;;justify-content:space-between;
+            .containBox{
+               min-height:300px;width:330px;padding:15px;
+                margin-left:20px;
+                svg{width:300px;height:200px;}
+                .contentBox{
+                    display:flex;flex-direction:column;justify-content:space-between;margin-top:20px;
+                    h2{color:$lightColor03;font-size:$fontSize + 20;font-weight:bold;margin-bottom:20px;}
+                    p{font-size:$fontSize + 15;font-weight:boldd;}
+                }
+            }            
+           
+        }
+    }
+
+}
+
+
+
+@media (max-width: $breakpoint-tablet04) {
+    body{width:1166px;}
+
+
+
+
+    header{
+        width:820px;height:auto;display:flex;background:$lightColor03;padding:10px;flex-direction:row;
+        align-items:center;justify-content:space-around;
+        #logo
+        {
+            width:100px;height:50px;
+            img{
+                width:100%;height:100%;
+            }
+        }
+        .navbar{
+            display:flex;padding:0 4px;margin-right:4px;
+            ul
+            {
+                display:flex;
+                .items{
+                    margin-left:50px;;padding:4px;font-size:$fontSize;
+                    &:hover{@extend .border;cursor:pointer;border:none;@extend .tranScale;}
+                    a{
+                        color:$darkColor01;font-size:$fontSize + 5;font-weight:$fontWeight;
+                        &:hover{color:$lightColor04;}
+                    }
+                }
+            }
+        }
+    
+    }
+
+    .landpage{
+        height:420px;align-items:left;text-align:left;
+        .content{
+            width:350px;margin:0 0 0 -400px;
+            img{width:200px;height:300px;}
+            a{
+                span{font-size:$fontSize;}
+            }
+            h1{font-size:24px;right:44%;bottom:35%;}
+          }
+    }
+
+
+    #services{
+        .containService{  
+            display:flex;flex-direction:column;justify-content:center;text-align:center;align-items:center;
+            .containBox{
+               min-height:300px;width:330px;padding:15px;margin-bottom:20px;
+                svg{width:300px;height:200px;}
+                .contentBox{
+                    display:flex;flex-direction:column;justify-content:space-between;margin-top:20px;
+                    h2{color:$lightColor03;font-size:$fontSize + 20;font-weight:bold;margin-bottom:20px;
+                    p{font-size:$fontSize + 15;font-weight:bo
+                }
+            }            
+           
+        }
+    }
+
+
+        }
+    }
+
+
+    #contact{
+        display:flex;flex-direction:column;width:100%;height:500px;text-align:center;align-items:center;
+        justify-content:center;margin-left:-200px;
+        form{
+            @extend .border;display:flex;flex-direction:column;min-height:200px;width:400px;background:$formColor;margin-left:75px;
+            *{border-radius:8px;}
+            .options{color: green;font-size:$fontSize + 5;color:$lightColor04;outline:none;border:none;
+            }
+            h2
+            {
+                color:$lightColor02;text-shadow: 4px 4px $darkColor02;font-size:$fontSize + 20;font-weight:bold;margin-bottom:40px;}
+            input
+            {
+                color:$lightColor04;padding:5px;font-size:$fontSize + 10;outline:none;border:none;border-bottom:3px solid $lightColor02;
+                &::placeholder{color:$lightColor04;}
+            }
+
+           .msg
+           {
+               color:$lightColor04;height:100px;outline:none;font-size:$fontSize + 10;
+               &::placeholder{text-align:center;align-items:bottom;line-height:80px;color:$lightColor04;
+            }
+        }
+        .submit{background:$sumbitColor;color:#fff;font-size:$fontSize + 10;cursor:pointer;
+            &:hover{color:$lightColor01;}
+          }
+        }
+     }
+
+
+
+    
+}
